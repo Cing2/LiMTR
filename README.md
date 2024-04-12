@@ -1,6 +1,6 @@
 # LiMTR code base
 
-This is the official repo of "LiMTR: using local LiDAR features for Motion prediction" paper. 
+This is the official repo of "LiMTR: Using local LiDAR features for Road Users Motion Prediction" paper. 
 
 This is a fork of the [MTR](https://github.com/sshaoshuai/MTR) code base.
 
