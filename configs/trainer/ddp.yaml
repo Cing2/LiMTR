@@ -1,0 +1,15 @@
+defaults:
+  - default
+
+strategy:
+  _target_: lightning.pytorch.strategies.DDPStrategy
+  find_unused_parameters: True
+  static_graph: False
+  gradient_as_bucket_view: True
+
+accelerator: gpu
+devices: 4
+num_nodes: 1
+sync_batchnorm: True
+
+# val_check_interval: 750 # log every 3000 batches

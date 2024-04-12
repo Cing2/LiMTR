@@ -1,0 +1,31 @@
+defaults:
+  - standard.yaml
+
+CONTEXT_ENCODER:
+  USE_LIDAR_POINTS: True
+  # needed for pointnet feature dimension length
+  INCLUDE_LIDAR_FEATURES: ${data.INCLUDE_LIDAR_FEATURES}
+  LP_ADD_ONEHOT_CLASS: ${data.LP_ADD_ONEHOT_CLASS}
+
+  REGULIZAR_WEIGHT_POINTNET: 0.001
+
+  lidar_encoder: pointnet-linear
+  lidar_enc_class: False # create a separate encoder per class
+  double_poly:
+    nr_timestamps: ${data.NUM_LIDAR_TIMESTAMPS}
+    pooling: max
+
+    part1:
+      num_pre_layers: 12
+      dim_pre_layers: 256
+      add_global: True
+      num_bet_layers: 12
+      dim_bet_layers: 512
+
+    part2:
+      num_bet_layers: 12
+      dim_bet_layers: 1024
+
+MOTION_DECODER:
+  # if to add output of lidar to center objects in decoder
+  CONCAT_LIDAR_CENTER: True

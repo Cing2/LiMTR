@@ -1,0 +1,5 @@
+name: warmup-lineardecay
+warmup_percentage: 0.05
+kwargs:
+  start_factor: 1.0
+  end_factor: 0.0

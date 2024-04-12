@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - default
+
+# 1 epoch on limited data and small batch size
+trainer:
+  max_epochs: 1
+  num_sanity_val_steps: 5
+
+data:
+  # batch_size_per_device: 4
+  NUM_FILES:
+    train: 20
+    test: 10

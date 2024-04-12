@@ -1,0 +1,21 @@
+defaults:
+  - default
+
+progress_bar:
+  _target_: lightning.pytorch.callbacks.TQDMProgressBar
+  refresh_rate: 10 # output every 10 batches
+
+model_summary:
+  _target_: lightning.pytorch.callbacks.ModelSummary
+  max_depth: 2 # the maximum depth of layer nesting that the summary will include
+
+model_checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "epoch_{epoch:03d}_map_{val/mean_average_precision:.3f}"
+  monitor: "val/mean_average_precision"
+  mode: "max"
+  save_top_k: 3
+  save_last: True
+  # save_on_train_epoch_end: True
+  auto_insert_metric_name: False

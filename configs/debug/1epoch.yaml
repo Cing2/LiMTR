@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - default
+
+# run 1 epoch on smaller subset
+trainer:
+  max_epochs: 1
+  num_sanity_val_steps: 5
+
+data:
+  NUM_FILES:
+    train: 200
+    test: 50
+
+task_name: "1epoch"
+
+tags: ["debug", "one_epoch"]

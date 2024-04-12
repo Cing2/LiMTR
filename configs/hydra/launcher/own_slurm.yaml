@@ -1,0 +1,24 @@
+# @package hydra.launcher
+
+defaults:
+  - submitit_slurm
+
+name: ${hydra.job.name}
+
+# setup slurm to use 1 node with 4 process for training with ddp
+nodes: 1
+partition: gpu
+cpus_per_task: 18
+gpus_per_node: 4
+tasks_per_node: 4
+timeout_min: 960 # 12 hours
+
+# gres: null
+
+# probably not need these
+# signal_delay_s: 120
+# max_num_timeout: 0
+# additional_parameters: {}
+# array_parallelism: 256
+# setup: null
+# srun_args: null

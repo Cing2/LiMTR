@@ -1,0 +1,18 @@
+# @package _global_
+
+trainer:
+  max_epochs: 60
+
+model:
+  optimizer:
+    lr: 0.0003
+
+  MOTION_DECODER:
+    # using loss without correlation
+    use_pytorch_loss: True
+
+tags: ["train", "all"]
+
+logger:
+  wandb:
+    name: std_new

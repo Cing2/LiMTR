@@ -1,0 +1,47 @@
+# @package _global_
+
+defaults:
+  - override /data: lidar
+  - override /model: double_poly
+
+data:
+  # using 10% of data
+  NUM_FILES: # number of files to use for training of project, -1 for all
+    train: 100 # max is 1000
+    test: 15 # max is 150
+
+  NUM_LIDAR_TIMESTAMPS: 11 # takes lidar samples reversed order upto 11 for all timestamps
+  # 0: range, 1: intensity, 2: elongation
+  INCLUDE_LIDAR_FEATURES: [0, 1, 2]
+  # if to add a one hot encoding of class type to each point of an object
+  LP_ADD_ONEHOT_CLASS: True
+
+  # lidar uses much more data, thus using batch size 4 and accumulate gradient of 4
+  batch_size_per_device: 4
+
+trainer:
+  accumulate_grad_batches: 4
+  max_epochs: 30
+
+# base linear model
+model:
+  CONTEXT_ENCODER:
+    lidar_encoder: pointnet-linear
+    double_poly:
+      nr_timestamps: ${data.NUM_LIDAR_TIMESTAMPS}
+      pooling: max
+      part1:
+        num_pre_layers: 10
+        dim_pre_layers: 256
+        add_global: True
+        num_bet_layers: 10
+        dim_bet_layers: 512
+      part2:
+        num_bet_layers: 10
+        dim_bet_layers: 1024
+
+  MOTION_DECODER:
+    # using loss without correlation
+    use_pytorch_loss: True
+    # concat lidar object to agents in decoder
+    CONCAT_LIDAR_AGENTS: True

@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - subset/new_lidar_base
+
+tags: ["scaling", "lidar"]
+
+logger:
+  wandb:
+    name: "layers_${model.CONTEXT_ENCODER.double_poly.layers_per_block}"

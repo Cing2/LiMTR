@@ -1,0 +1,35 @@
+# @package _global_
+
+defaults:
+  - override /data: lidar
+  - override /model: lidar
+
+data:
+  NUM_LIDAR_TIMESTAMPS: 11
+  # 0: range, 1: intensity, 2: elongation
+  INCLUDE_LIDAR_FEATURES: [1]
+  # if to add a one hot encoding of class type to each point of an object
+  LP_ADD_ONEHOT_CLASS: True
+
+  # lidar uses much more data, thus using batch size 4 and accumulate gradient of 4
+  batch_size_per_device: 4
+
+trainer:
+  accumulate_grad_batches: 4
+  max_epochs: 60
+
+model:
+  optimizer:
+    lr: 0.0003
+
+  MOTION_DECODER:
+    # using loss without correlation
+    use_pytorch_loss: True
+    # concat lidar object to agents in decoder
+    CONCAT_LIDAR_AGENTS: True
+
+tags: ["train", "all"]
+
+logger:
+  wandb:
+    name: lidar

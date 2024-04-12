@@ -1,0 +1,5 @@
+# ddp with 2 nodes
+defaults:
+  - ddp
+
+num_nodes: 2

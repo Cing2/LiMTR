@@ -1,0 +1,18 @@
+# @package _global_
+
+train: False
+test: True
+
+task_name: "eval"
+
+tags: ["eval"]
+
+model:
+  val_output_path: ${paths.output_dir}/predictions/results.pkl
+
+  # set to true to collect lidar encoder max pooling idx for critical point analysis
+  CONTEXT_ENCODER:
+    output_max_idx: True
+
+# passing checkpoint path is necessary for evaluation
+ckpt_path: ???

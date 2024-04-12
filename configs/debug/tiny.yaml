@@ -1,0 +1,30 @@
+# @package _global_
+
+defaults:
+  - default
+
+# sets level of all command line loggers to 'DEBUG'
+# https://hydra.cc/docs/tutorials/basic/running_your_app/logging/
+hydra:
+  job_logging:
+    root:
+      level: DEBUG
+  # use this to also set hydra loggers to 'DEBUG'
+  # verbose: True
+
+# callbacks: null
+
+# run 20 batch and 10 validation batches
+trainer:
+  max_epochs: 1
+  limit_train_batches: 20
+  val_check_interval: 10
+  limit_val_batches: 10
+  # detect_anomaly: true # raise exception if NaN or +/-inf is detected in any tensor, give quite a large overhead
+  num_sanity_val_steps: 1
+  log_every_n_steps: 5
+
+data:
+  NUM_WORKERS: 2 # debuggers don't like multiprocessing
+  # pin_memory: False # disable gpu memory pin
+  batch_size_per_device: 1

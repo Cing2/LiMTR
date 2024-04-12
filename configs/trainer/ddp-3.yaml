@@ -1,0 +1,5 @@
+# ddp with 3 nodes
+defaults:
+  - ddp
+
+num_nodes: 3

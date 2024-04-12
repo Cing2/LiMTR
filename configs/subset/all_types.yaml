@@ -1,0 +1,1 @@
+object_types: ["TYPE_VEHICLE", "TYPE_PEDESTRIAN", "TYPE_CYCLIST"]

@@ -1,0 +1,17 @@
+_target_: lightning.pytorch.trainer.Trainer
+
+default_root_dir: ${paths.output_dir}
+
+min_epochs: 1 # prevents early stopping
+max_epochs: 30
+
+accelerator: auto
+devices: auto
+
+# clip gradients
+gradient_clip_val: 1000.0
+
+# perform a validation loop every x batches
+# val_check_interval: 3000
+# check every epoch
+val_check_interval: 1.0

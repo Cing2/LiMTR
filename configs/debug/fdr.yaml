@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - default
+
+# disable callbacks and loggers during debugging
+callbacks: null
+logger: null
+
+# runs 1 train, 1 validation and 1 test step
+trainer:
+  fast_dev_run: true
+
+data:
+  NUM_WORKERS: 4

@@ -1,0 +1,5 @@
+_target_: torch.optim.lr_scheduler.MultiStepLR
+_partial_: true
+milestones: [22, 24, 26, 28]
+gamma: 0.5 # lr decay
+# LR_CLIP: 0.000001

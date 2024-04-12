@@ -1,0 +1,9 @@
+# @package _global_
+
+# using 10% of data
+data:
+  NUM_FILES: # number of files to use for training of project, -1 for all
+    train: 100 # max is 1000
+    test: 15 # max is 150
+
+tags: ['subset10']

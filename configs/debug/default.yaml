@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - /trainer/profiler: default
+
+# overwrite task name so debugging logs are stored in separate folder
+task_name: "debug"
+
+extras:
+  ignore_warnings: False
+  enforce_tags: False
+
+tags: ["debug"]

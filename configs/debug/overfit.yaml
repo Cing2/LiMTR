@@ -1,0 +1,17 @@
+# @package _global_
+
+# overfits to 3 batches
+
+trainer:
+  max_epochs: 60
+  overfit_batches: 5
+  # disable validation to just test for loss overfit
+  limit_val_batches: 0.0
+  val_check_interval: 1.0
+  num_sanity_val_steps: 0
+
+# model ckpt and early stopping need to be disabled during overfitting
+callbacks: null
+
+task_name: "overfit"
+tags: ["overfit"]

@@ -1,0 +1,18 @@
+# install these two separately
+# waymo-open-dataset-tf-2-11-0==1.6.0
+# torch==2.0.*
+matplotlib
+tensorboardx
+easydict
+wandb
+webdataset
+numba
+scikit-learn
+
+hydra-core
+hydra_colorlog
+lightning
+rich # nice printing
+rootutils
+wurlitzer # for disabling logs in waymo eval
+polars

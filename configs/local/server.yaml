@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - override /callbacks: server
+
+paths:
+  root_dir: "/path/to/data"
+
+data:
+  NUM_WORKERS: 12
