@@ -4,7 +4,9 @@ This is the official repo of "LiMTR: Using local LiDAR features for Road Users M
 
 This is a fork of the [MTR](https://github.com/sshaoshuai/MTR) code base.
 
-The code base use the structure from [link](https://github.com/ashleve/lightning-hydra-template) for their pytorch ligthning and hydra setup, this allows for easy experimention
+The code base use the structure from [link](https://github.com/ashleve/lightning-hydra-template) for their pytorch ligthning and hydra setup, this allows for easy experimenting
+
+The model weights can be found [here](https://www.mediafire.com/folder/464ajk8hsm3l1/LiMTR-weights)
 
 ## Installation
 
