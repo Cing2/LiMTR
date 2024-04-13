@@ -6,7 +6,6 @@ This is a fork of the [MTR](https://github.com/sshaoshuai/MTR) code base.
 
 The code base use the structure from [link](https://github.com/ashleve/lightning-hydra-template) for their pytorch ligthning and hydra setup, this allows for easy experimenting
 
-The model weights can be found [here](https://www.mediafire.com/folder/464ajk8hsm3l1/LiMTR-weights)
 
 ## Installation
 
@@ -104,3 +103,8 @@ sbatch scripts/run_slurm_1gpu.sh +lr_finder=true trainer=default
 # or for other experiment setup
 sbatch scripts/run_slurm_1gpu.sh +lr_finder=true  experiment=lidar
 ```
+
+## Model weights
+The model weights can be found [here](https://www.mediafire.com/folder/464ajk8hsm3l1/LiMTR-weights)
+
+They should be used with the settings in the experiment folder, std_full, and lidar_full. 
