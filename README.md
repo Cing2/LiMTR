@@ -1,12 +1,9 @@
 # LiMTR code base
 
-This is the official repo of "LiMTR: Using local LiDAR features for Road Users Motion Prediction" paper.
+This is the official repo of "LiMTR: Time Series Motion Prediction for Diverse Road Users through Multimodal Feature Integration" paper, see here: [arxiv.org/abs/2410.15819](https://arxiv.org/abs/2410.15819).
 
 This is a fork of the [MTR](https://github.com/sshaoshuai/MTR) code base.
-
-The code base use the structure from [link](https://github.com/ashleve/lightning-hydra-template) for their pytorch ligthning and hydra setup, this allows for easy experimenting
-
-We are unable to provide the pre-trained model weights due to [Waymo Dataset License Agreement](https://waymo.com/open/terms/). 
+The code base uses the setup from the [PyTorch Lightning and Hydra](https://github.com/ashleve/lightning-hydra-template) template, this allows for easy experimenting. We are unable to provide the pre-trained model weights due to the [Waymo Dataset License Agreement](https://waymo.com/open/terms/). 
 
 ## Installation
 
